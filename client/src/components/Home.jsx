@@ -5,7 +5,7 @@ import TodoList from './TodoList';
 
 function Home() {
 
-    const { todos } = useContext(TodoContext)
+    const { todos, getTodos } = useContext(TodoContext)
 
     const [formData, setFormData] = useState({
         title: "",
@@ -28,8 +28,8 @@ function Home() {
     function submitTask(e) {
         e.preventDefault()
         axios.post(`/api/todo`, formData)
-            .then(res => {
-                console.log(res.data)
+            .then(() => {
+                getTodos()
             })
             .catch(err => {
                 console.log(err)

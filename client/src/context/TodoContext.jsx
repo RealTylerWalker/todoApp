@@ -7,12 +7,23 @@ function TodoContextProvider(props) {
 
     const [todos, setTodos] = useState([])
 
+    function sortData(todos) {
+        return todos.sort((a, b) => {
+            let aDate = new Date(a.createdAt)
+            let bDate = new Date(b.createdAt)
+
+            return bDate - aDate
+        })
+    }
+
+
+
 
     function getTodos() {
         axios.get('/api/todo')
             .then(res => {
                 setTodos(res.data)
-                console.log(res.data)
+                console.log(sortData(res.data))
 
             })
             .catch(err => {
