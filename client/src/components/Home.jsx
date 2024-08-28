@@ -1,5 +1,5 @@
 import { TodoContext } from '../context/TodoContext'
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import axios from "axios"
 import TodoList from './TodoList';
 

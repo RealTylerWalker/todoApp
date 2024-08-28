@@ -1,10 +1,10 @@
 import TodoItem from "./TodoItem"
-export default function TodoList({ todoList }) {
+export default function CompletedList({ todos }) {
 
     return (
         <div className="todo-list">
-            {todoList.map(todo => {
-                if (!todo.status) {
+            {todos.map(todo => {
+                if (todo.status) {
                     return <TodoItem key={todo._id} todo={todo} />
                 }
             })

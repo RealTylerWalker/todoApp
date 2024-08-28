@@ -35,7 +35,6 @@ function TodoContextProvider(props) {
     }
 
     useEffect(() => {
-        console.log("ran hook use effect")
         getTodos()
     }, [forceUpdate])
 
