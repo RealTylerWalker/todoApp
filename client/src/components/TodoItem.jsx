@@ -39,7 +39,7 @@ export default function TodoItem(props) {
 
     function handleDelete() {
         deleteItem(todo._id)
-        getTodos()
+        setForceUpdate(true)
     }
 
     function handleEdit() {
