@@ -5,7 +5,7 @@ import EditTodoItem from "./EditTodoItem"
 
 export default function TodoItem(props) {
     const { todo } = props
-    const { getTodos } = useContext(TodoContext)
+    const { getTodos, setForceUpdate } = useContext(TodoContext)
 
     const [isBeingEdited, setIsBeingEdited] = useState(false)
 
@@ -53,11 +53,12 @@ export default function TodoItem(props) {
         <p>{todo.description}</p>
         {todo.dueDate ? <span>Due date: {formatDate(new Date(todo.dueDate))} </span> : ""}
         <span>Priority:{todo.priority}</span>
+        <span>Category:{todo.category}</span>
         <button onClick={handleEdit}>Edit</button>
         <button onClick={handleDelete}>Delete</button>
     </div>)
 
-    const editForm = <EditTodoItem updateStatus={setIsBeingEdited} todo={todo} getTodos={getTodos} />
+    const editForm = <EditTodoItem updateStatus={setIsBeingEdited} todo={todo} getTodos={getTodos} setForceUpdate={setForceUpdate} />
     return (
         isBeingEdited ? editForm : todoCard
     )

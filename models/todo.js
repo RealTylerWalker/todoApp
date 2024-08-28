@@ -25,7 +25,7 @@ const todoSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['Work', 'Personal', 'Shopping', 'Others'],
+        enum: ['Work', 'Personal', 'Shopping', 'School', 'Others'],
         default: 'Personal'
     },
     createdAt: {

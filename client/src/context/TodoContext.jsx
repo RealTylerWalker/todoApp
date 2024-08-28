@@ -16,6 +16,8 @@ function TodoContextProvider(props) {
         })
     }
 
+    const [forceUpdate, setForceUpdate] = useState(false);
+
 
 
 
@@ -29,12 +31,13 @@ function TodoContextProvider(props) {
             .catch(err => {
                 console.log(err)
             })
+        setForceUpdate(false)
     }
 
-
     useEffect(() => {
+        console.log("ran hook use effect")
         getTodos()
-    }, [])
+    }, [forceUpdate])
 
 
     return (
@@ -42,6 +45,7 @@ function TodoContextProvider(props) {
             value={{
                 todos,
                 getTodos,
+                setForceUpdate,
             }}
         >
             {props.children}
