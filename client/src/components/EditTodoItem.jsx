@@ -36,7 +36,7 @@ export default function EditTodoItem(props) {
         axios.put(`/api/todo/${todoItemId}`, formData)
             .then(res => {
                 console.log("edited:", res.data)
-            })
+            }).then(props.setForceUpdate(true))
             .catch(err => console.log(err))
     }
 
@@ -45,7 +45,6 @@ export default function EditTodoItem(props) {
         e.preventDefault()
         editItem(props.todo._id)
         props.updateStatus(false)
-        props.setForceUpdate(true)
     }
 
     function cancelEdit() {

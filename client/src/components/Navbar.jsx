@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom'
+
 function Navbar() {
     return (
         <div className="navbar">
-            <h1>Navbar</h1>
+            <Link to='/'><button>Home</button></Link>
+            <Link to='/completed'><button>Completed</button></Link>
+            <Link to='/about'><button>about</button></Link>
         </div>
     )
 }
