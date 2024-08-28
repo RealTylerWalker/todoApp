@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-width: 100vw;
   text-align: center;
 }
 
@@ -40,3 +38,84 @@
 .read-the-docs {
   color: #888;
 }
+
+.topBar {
+  font-size: 3rem;
+  font-family: 'Trebuchet MS';
+  background-color: #658ED6;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todoFormContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.todoForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+}
+
+
+.catPriorityDue {
+  display: flex;
+  gap: 2vw;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 63px;
+}
+
+.submitTask {
+  margin-top: .5vw;
+  height: 63px;
+  width: 15vw;
+}
+
+select{
+  width: 12vw;
+}
+
+input[type=date] {
+  width: 12vw;
+}
+
+input[type=submit], [type=date] {
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45A049;
+}
+
+ input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }

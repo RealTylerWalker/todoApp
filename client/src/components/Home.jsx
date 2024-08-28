@@ -51,36 +51,46 @@ function Home() {
 
     return (
         <div>
-            <h1>Home</h1>
+            <div className='topBar'>DoDue</div>
 
-            <form onSubmit={submitTask}>
-                <fieldset>
+
+
+            <form onSubmit={submitTask} className='todoFormContainer'>
+                <div className='todoForm'>
                     <input type='text' onChange={updateTitle} id="title" placeholder='Task Name' value={formData.title}></input>
-                    <textarea type='text' onChange={updateDescription} id="description" placeholder='Add some deets...' value={formData.description}></textarea>
-                    <label htmlFor="dueDate">Due date:</label>
-                    <input type='date' onChange={updateDueDate} id="dueDate" placeholder='Due date:' value={formData.dueDate}></input>
-                    <label htmlFor="category">Category:</label>
-                    <select onChange={editCategory} id="category" value={formData.category}>
-                        <option value="Work">Work</option>
-                        <option value="Personal">Personal</option>
-                        <option value="School">School</option>
-                        <option value="Shopping">Shopping</option>
-                        <option value="Others">Other</option>
-                    </select>
-                    <label htmlFor="priority">Priority:</label>
-                    <select onChange={editPriority} id="priority" value={formData.priority}>
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>
-                    </select>
-                    <button type='submit'>Add task</button>
-                </fieldset>
+                    <input type='text' onChange={updateDescription} id="description" placeholder='Add some deets...' value={formData.description}></input>
+                    <div className='catPriorityDue'>
+                        <div className='dueDate'>
+                            <input type='date' placeholder="Choose Date:" onChange={updateDueDate} id="dueDate" value={formData.dueDate}></input>
+                        </div>
+                        <div className='category'>
+                            <select onChange={editCategory} id="category" value={formData.category} placeholder="select category">
+
+                                <option value="" disabled selected>Choose Category</option>
+                                <option value="Work">Work</option>
+                                <option value="Personal">Personal</option>
+                                <option value="School">School</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Others">Other</option>
+                            </select>
+                        </div>
+                        <div className='priority'>
+                            <select onChange={editPriority} id="priority" value={formData.priority}>
+                                <option value="" disabled selected>Choose Priority</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type='submit' className='submitTask'>Add task</button>
+                </div>
             </form>
 
             <div>
                 <TodoList todoList={todos} />
-            </div>
 
+            </div>
         </div>
     )
 }
