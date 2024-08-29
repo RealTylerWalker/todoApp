@@ -59,17 +59,25 @@ export default function TodoItem(props) {
     }
 
 
-    const todoCard = (<div>
+    const todoCard = (<div className="todoItemContainer">
 
-        <h1>{todo.title}</h1>
-        <label htmlFor="statusBox">Status: </label>
         <input type="checkbox" checked={checked} id="statusBox" onChange={handleCheck} />
-        <p>{todo.description}</p>
-        {todo.dueDate ? <span>Due date: {formatDate(new Date(todo.dueDate))} </span> : ""}
-        <span>Priority:{todo.priority}</span>
-        <span>Category:{todo.category}</span>
-        <button onClick={handleEdit}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+        <div className="titleDescriptionDoCatPriorityContainer">
+            <div className="titleAndDescriptionContainer">
+                <div className="todoTitle">{todo.title}</div>
+                <div>{todo.description}</div>
+            </div>
+            <div className="doCatPriorityContainer">
+                {todo.dueDate ? <span>Due date: {formatDate(new Date(todo.dueDate))} </span> : ""}
+                <span>Priority:{todo.priority}</span>
+                <span>Category:{todo.category}</span>
+            </div>
+        </div>
+        <div className="buttonContainer">
+            <button onClick={handleEdit}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
+        </div>
+
     </div>)
 
     const editForm = <EditTodoItem updateStatus={setIsBeingEdited} todo={todo} getTodos={getTodos} setForceUpdate={setForceUpdate} />

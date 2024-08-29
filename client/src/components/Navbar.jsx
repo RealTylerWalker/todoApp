@@ -5,7 +5,7 @@ function Navbar() {
         <div className="navbar">
             <Link to='/'><button>Home</button></Link>
             <Link to='/completed'><button>Completed</button></Link>
-            <Link to='/about'><button>about</button></Link>
+            <Link to='/about'><button>About</button></Link>
         </div>
     )
 }

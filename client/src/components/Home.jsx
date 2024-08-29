@@ -51,7 +51,7 @@ function Home() {
 
     return (
         <div>
-            <div className='topBar'>DoDue</div>
+
 
 
 
@@ -87,7 +87,7 @@ function Home() {
                 </div>
             </form>
 
-            <div>
+            <div className='todoListContainer'>
                 <TodoList todoList={todos} />
 
             </div>

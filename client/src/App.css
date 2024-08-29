@@ -31,6 +31,11 @@
   }
 }
 
+.about {
+  width: 1400px;
+  padding-left: 140px;
+}
+
 .card {
   padding: 2em;
 }
@@ -40,6 +45,7 @@
 }
 
 .topBar {
+  margin-top: 100px;
   font-size: 3rem;
   font-family: 'Trebuchet MS';
   background-color: #658ED6;
@@ -55,6 +61,13 @@
   justify-content: center;
   margin-top: 5vh;
 }
+
+.todoListContainer {
+  display: flex;
+  justify-content: center;
+}
+
+
 
 .todoForm {
   display: flex;
@@ -119,3 +132,88 @@ input[type=submit]:hover {
   input[type="date"]:valid:before {
     content: "";
   }
+
+  .navbar {
+    background-color: white;
+    padding: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed; /* Fixed position */
+    top: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure it stays on top */
+    gap: 1vw;
+  }
+
+  .navbar button{
+    background-color: #D66565;
+    width: 10vw;
+    color: white;
+  }
+
+  .bottomBar {
+    margin-top: 40px;
+    font-size: 1rem;
+    height: 72px;;
+    font-family: 'Trebuchet MS';
+    background-color: #658ED6;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .todoItemContainer {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    align-items: left;
+    margin-top: 10px;
+    padding: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+ input[type=checkbox]{
+  width: 5vh;
+  background-color: #D66565;
+  
+}
+  .titleAndDescriptionContainer {
+    margin-bottom: 5px;
+  }
+
+.doCatPriorityContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+  .buttonContainer {
+    gap: 1vw;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+  }
+
+  .titleDescriptionDoCatPriorityContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+.todoTitle{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.todoDescription {
+  font-size: 1rem;
+}
+
+.todoList {
+  margin-top: 40px;
+  margin-bottom: 120px;
+}

@@ -8,8 +8,7 @@ function Completed() {
     const { todos, getTodos } = useContext(TodoContext)
 
     return (
-        <div>
-            <h1>Completed</h1>
+        <div className="todoListContainer">
             <CompletedList todos={todos} />
         </div>
     )
